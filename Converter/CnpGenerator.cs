@@ -14,19 +14,20 @@ namespace Converter
             cnp += GetGenderIndex(birthDate, gender);
             cnp += birthDate.ToString("yyMMdd");
             cnp += judet;
-            cnp += new Random().Next(1, 9);
-            cnp += new Random().Next(1, 9);
-            cnp += new Random().Next(1, 9);
+            cnp += new Random().Next(0, 9);
+            cnp += new Random().Next(0, 9);
+            cnp += new Random().Next(0, 9);
             cnp += GetCComponent(cnp);
             return cnp;
         }
 
         private string GetCComponent(string cnp)
         {
+            string control = "279146358279";
             long sum = 0;
-            foreach (var item in cnp)
+            for(var index = 0; index < cnp.Length; index++)
             {
-                sum += int.Parse(item.ToString()) * 279146358279;
+                sum += int.Parse(cnp[index].ToString()) * int.Parse(control[index].ToString());
             }
             var cComponent = (sum % 11).ToString();
             if (cComponent == "10")

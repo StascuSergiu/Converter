@@ -38,5 +38,11 @@ namespace Converter
             tbPrenume.Text = cbSex.Text == "M" ? prenumeM[random.Next(prenumeM.Count)] : prenumeF[random.Next(prenumeF.Count)];
             tbNume.Text = nume[random.Next(nume.Count)];
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //copy to clipboard 
+            Clipboard.SetText(tbDbFormat.Text);
+        }
     }
 }

@@ -46,6 +46,7 @@
             btGenerate = new Button();
             label8 = new Label();
             cbJudet = new ComboBox();
+            button1 = new Button();
             SuspendLayout();
             // 
             // btConvert
@@ -53,7 +54,7 @@
             btConvert.Location = new Point(427, 23);
             btConvert.Name = "btConvert";
             btConvert.Size = new Size(75, 23);
-            btConvert.TabIndex = 0;
+            btConvert.TabIndex = 2;
             btConvert.Text = "CONVERT";
             btConvert.UseVisualStyleBackColor = true;
             btConvert.Click += btConvert_Click;
@@ -88,14 +89,14 @@
             tbUUID.Location = new Point(118, 23);
             tbUUID.Name = "tbUUID";
             tbUUID.Size = new Size(303, 23);
-            tbUUID.TabIndex = 4;
+            tbUUID.TabIndex = 1;
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.Location = new Point(118, 57);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(105, 23);
-            dateTimePicker1.TabIndex = 5;
+            dateTimePicker1.TabIndex = 4;
             // 
             // cbSex
             // 
@@ -103,7 +104,7 @@
             cbSex.Location = new Point(118, 86);
             cbSex.Name = "cbSex";
             cbSex.Size = new Size(105, 23);
-            cbSex.TabIndex = 6;
+            cbSex.TabIndex = 5;
             // 
             // label3
             // 
@@ -179,7 +180,7 @@
             btGenerate.Location = new Point(118, 144);
             btGenerate.Name = "btGenerate";
             btGenerate.Size = new Size(75, 23);
-            btGenerate.TabIndex = 15;
+            btGenerate.TabIndex = 7;
             btGenerate.Text = "GENERATE";
             btGenerate.UseVisualStyleBackColor = true;
             btGenerate.Click += btGenerateClick;
@@ -199,13 +200,24 @@
             cbJudet.Location = new Point(118, 115);
             cbJudet.Name = "cbJudet";
             cbJudet.Size = new Size(105, 23);
-            cbJudet.TabIndex = 17;
+            cbJudet.TabIndex = 6;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(926, 22);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 17;
+            button1.Text = "COPY";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(930, 293);
+            ClientSize = new Size(1009, 293);
+            Controls.Add(button1);
             Controls.Add(cbJudet);
             Controls.Add(label8);
             Controls.Add(btGenerate);
@@ -251,5 +263,6 @@
         private Button btGenerate;
         private Label label8;
         private ComboBox cbJudet;
+        private Button button1;
     }
 }
