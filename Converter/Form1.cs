@@ -44,5 +44,14 @@ namespace Converter
             //copy to clipboard 
             Clipboard.SetText(tbDbFormat.Text);
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            var age = DateTime.Now - dateTimePicker1.Value;
+            var year = age.Days / 365;
+            var month = (age.Days - (year * 365)) / 30;
+            var days = age.Days - (year * 365) - (month * 30);
+            lblAgeValue.Text = $"{year} ani, {month} luni, {days} zile";
+        }
     }
 }
