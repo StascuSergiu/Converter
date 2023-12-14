@@ -50,10 +50,10 @@
             button1 = new Button();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
+            tbCui = new TextBox();
             label10 = new Label();
             lblAgeValue = new Label();
             label9 = new Label();
-            tbCui = new TextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -263,6 +263,13 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Random data";
             // 
+            // tbCui
+            // 
+            tbCui.Location = new Point(102, 106);
+            tbCui.Name = "tbCui";
+            tbCui.Size = new Size(105, 23);
+            tbCui.TabIndex = 20;
+            // 
             // label10
             // 
             label10.AutoSize = true;
@@ -290,18 +297,11 @@
             label9.TabIndex = 17;
             label9.Text = "Varsta:";
             // 
-            // tbCui
-            // 
-            tbCui.Location = new Point(102, 106);
-            tbCui.Name = "tbCui";
-            tbCui.Size = new Size(105, 23);
-            tbCui.TabIndex = 20;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(530, 568);
+            ClientSize = new Size(540, 382);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
