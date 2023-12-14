@@ -8,6 +8,7 @@ namespace Converter
 {
     internal class CnpGenerator
     {
+        
         public string GenerateCNP(DateTime birthDate, string judet, string gender)
         {
             var cnp = "";

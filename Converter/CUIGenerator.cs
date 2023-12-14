@@ -1,42 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Converter
+﻿namespace Converter
 {
     internal class CUIGenerator
     {
-        public string GeneratorCUI(string inputCui)
+        public string GeneratorCUI(int cuiLength)
         {
             string cui = "";
-
-            if (inputCui == "")
+            for (int i = 1; i < 10; i++)
             {
-                for (int i = 1; i < 10; i++)
+                if (i <= 10 - cuiLength)
                 {
-                    cui += new Random().Next(0, 9);
-                }
-                cui += GetCuiCheckSum(cui);
-            }
-            else
-            {
-                if (inputCui.Length <= 9)
-                {
-                    for(int i = 0; i < 9 - inputCui.Length; i++)
-                    {
-                        cui += "0";
-                    }
-                    cui += inputCui;
-                    cui += GetCuiCheckSum(cui);
+                    cui += "0";
                 }
                 else
                 {
-                    cui = "input length between(0,9)";
+                    cui += new Random().Next(0, 9);
                 }
             }
-            
+            cui += GetCuiCheckSum(cui);
             return cui;
         }
         public string GetCuiCheckSum(string cui)
@@ -50,7 +30,7 @@ namespace Converter
             sum *=10;
             var cComponent = (sum % 11).ToString();
             if (cComponent == "10")
-                return "1";
+                return "0";
             return cComponent;
         }
     }

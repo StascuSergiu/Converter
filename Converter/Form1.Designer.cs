@@ -47,13 +47,16 @@
             btGenerate = new Button();
             label8 = new Label();
             cbJudet = new ComboBox();
-            button1 = new Button();
+            btnCopySupId = new Button();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
+            Length = new Label();
+            btnCopyCUI = new Button();
+            cbCUILength = new ComboBox();
+            tbCui = new TextBox();
             label10 = new Label();
             lblAgeValue = new Label();
             label9 = new Label();
-            tbCui = new TextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -187,7 +190,7 @@
             // 
             // btGenerate
             // 
-            btGenerate.Location = new Point(99, 149);
+            btGenerate.Location = new Point(102, 107);
             btGenerate.Name = "btGenerate";
             btGenerate.Size = new Size(75, 23);
             btGenerate.TabIndex = 7;
@@ -212,20 +215,20 @@
             cbJudet.Size = new Size(105, 23);
             cbJudet.TabIndex = 6;
             // 
-            // button1
+            // btnCopySupId
             // 
-            button1.Location = new Point(408, 43);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 17;
-            button1.Text = "COPY";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnCopySupId.Location = new Point(408, 43);
+            btnCopySupId.Name = "btnCopySupId";
+            btnCopySupId.Size = new Size(75, 23);
+            btnCopySupId.TabIndex = 17;
+            btnCopySupId.Text = "COPY";
+            btnCopySupId.UseVisualStyleBackColor = true;
+            btnCopySupId.Click += btnCopySuoId_Click;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(btnCopySupId);
             groupBox1.Controls.Add(btConvert);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(tbDbFormat);
@@ -239,6 +242,9 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(Length);
+            groupBox2.Controls.Add(btnCopyCUI);
+            groupBox2.Controls.Add(cbCUILength);
             groupBox2.Controls.Add(tbCui);
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(lblAgeValue);
@@ -263,10 +269,45 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Random data";
             // 
+            // Length
+            // 
+            Length.AutoSize = true;
+            Length.Location = new Point(98, 153);
+            Length.Name = "Length";
+            Length.Size = new Size(44, 15);
+            Length.TabIndex = 23;
+            Length.Text = "Length";
+            // 
+            // btnCopyCUI
+            // 
+            btnCopyCUI.Location = new Point(277, 149);
+            btnCopyCUI.Name = "btnCopyCUI";
+            btnCopyCUI.Size = new Size(75, 23);
+            btnCopyCUI.TabIndex = 22;
+            btnCopyCUI.Text = "COPY CUI";
+            btnCopyCUI.UseVisualStyleBackColor = true;
+            btnCopyCUI.Click += btnCopyCUI_Click;
+            // 
+            // cbCUILength
+            // 
+            cbCUILength.FormattingEnabled = true;
+            cbCUILength.Location = new Point(148, 149);
+            cbCUILength.Name = "cbCUILength";
+            cbCUILength.Size = new Size(41, 23);
+            cbCUILength.TabIndex = 21;
+            // 
+            // tbCui
+            // 
+            tbCui.Location = new Point(195, 149);
+            tbCui.Name = "tbCui";
+            tbCui.ReadOnly = true;
+            tbCui.Size = new Size(76, 23);
+            tbCui.TabIndex = 20;
+            // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(9, 110);
+            label10.Location = new Point(8, 153);
             label10.Name = "label10";
             label10.Size = new Size(29, 15);
             label10.TabIndex = 19;
@@ -290,18 +331,11 @@
             label9.TabIndex = 17;
             label9.Text = "Varsta:";
             // 
-            // tbCui
-            // 
-            tbCui.Location = new Point(102, 106);
-            tbCui.Name = "tbCui";
-            tbCui.Size = new Size(105, 23);
-            tbCui.TabIndex = 20;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(530, 568);
+            ClientSize = new Size(535, 380);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -335,12 +369,15 @@
         private Button btGenerate;
         private Label label8;
         private ComboBox cbJudet;
-        private Button button1;
+        private Button btnCopySupId;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private Label lblAgeValue;
         private Label label9;
         private Label label10;
         private TextBox tbCui;
+        private ComboBox cbCUILength;
+        private Button btnCopyCUI;
+        private Label Length;
     }
 }
