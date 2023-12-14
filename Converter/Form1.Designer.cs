@@ -50,8 +50,10 @@
             button1 = new Button();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
+            label10 = new Label();
             lblAgeValue = new Label();
             label9 = new Label();
+            tbCui = new TextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -109,7 +111,7 @@
             // cbSex
             // 
             cbSex.FormattingEnabled = true;
-            cbSex.Location = new Point(102, 51);
+            cbSex.Location = new Point(102, 50);
             cbSex.Name = "cbSex";
             cbSex.Size = new Size(105, 23);
             cbSex.TabIndex = 5;
@@ -126,7 +128,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(9, 55);
+            label4.Location = new Point(9, 54);
             label4.Name = "label4";
             label4.Size = new Size(28, 15);
             label4.TabIndex = 8;
@@ -135,7 +137,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(9, 142);
+            label5.Location = new Point(6, 182);
             label5.Name = "label5";
             label5.Size = new Size(34, 15);
             label5.TabIndex = 9;
@@ -144,7 +146,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(9, 167);
+            label6.Location = new Point(6, 207);
             label6.Name = "label6";
             label6.Size = new Size(43, 15);
             label6.TabIndex = 10;
@@ -153,7 +155,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(9, 192);
+            label7.Location = new Point(6, 232);
             label7.Name = "label7";
             label7.Size = new Size(55, 15);
             label7.TabIndex = 11;
@@ -161,7 +163,7 @@
             // 
             // tbCNP
             // 
-            tbCNP.Location = new Point(102, 138);
+            tbCNP.Location = new Point(99, 178);
             tbCNP.Name = "tbCNP";
             tbCNP.ReadOnly = true;
             tbCNP.Size = new Size(303, 23);
@@ -169,7 +171,7 @@
             // 
             // tbNume
             // 
-            tbNume.Location = new Point(102, 163);
+            tbNume.Location = new Point(99, 203);
             tbNume.Name = "tbNume";
             tbNume.ReadOnly = true;
             tbNume.Size = new Size(303, 23);
@@ -177,7 +179,7 @@
             // 
             // tbPrenume
             // 
-            tbPrenume.Location = new Point(102, 188);
+            tbPrenume.Location = new Point(99, 228);
             tbPrenume.Name = "tbPrenume";
             tbPrenume.ReadOnly = true;
             tbPrenume.Size = new Size(303, 23);
@@ -185,7 +187,7 @@
             // 
             // btGenerate
             // 
-            btGenerate.Location = new Point(102, 109);
+            btGenerate.Location = new Point(99, 149);
             btGenerate.Name = "btGenerate";
             btGenerate.Size = new Size(75, 23);
             btGenerate.TabIndex = 7;
@@ -196,7 +198,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(9, 86);
+            label8.Location = new Point(9, 82);
             label8.Name = "label8";
             label8.Size = new Size(38, 15);
             label8.TabIndex = 16;
@@ -205,7 +207,7 @@
             // cbJudet
             // 
             cbJudet.FormattingEnabled = true;
-            cbJudet.Location = new Point(102, 80);
+            cbJudet.Location = new Point(102, 78);
             cbJudet.Name = "cbJudet";
             cbJudet.Size = new Size(105, 23);
             cbJudet.TabIndex = 6;
@@ -237,6 +239,8 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(tbCui);
+            groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(lblAgeValue);
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(dateTimePicker1);
@@ -254,10 +258,19 @@
             groupBox2.Controls.Add(tbCNP);
             groupBox2.Location = new Point(25, 94);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(490, 222);
+            groupBox2.Size = new Size(493, 266);
             groupBox2.TabIndex = 19;
             groupBox2.TabStop = false;
             groupBox2.Text = "Random data";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(9, 110);
+            label10.Name = "label10";
+            label10.Size = new Size(29, 15);
+            label10.TabIndex = 19;
+            label10.Text = "CUI:";
             // 
             // lblAgeValue
             // 
@@ -277,11 +290,18 @@
             label9.TabIndex = 17;
             label9.Text = "Varsta:";
             // 
+            // tbCui
+            // 
+            tbCui.Location = new Point(102, 106);
+            tbCui.Name = "tbCui";
+            tbCui.Size = new Size(105, 23);
+            tbCui.TabIndex = 20;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(539, 332);
+            ClientSize = new Size(530, 568);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -320,5 +340,7 @@
         private GroupBox groupBox2;
         private Label lblAgeValue;
         private Label label9;
+        private Label label10;
+        private TextBox tbCui;
     }
 }

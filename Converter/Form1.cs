@@ -37,6 +37,7 @@ namespace Converter
             var random = new Random();
             tbPrenume.Text = cbSex.Text == "M" ? prenumeM[random.Next(prenumeM.Count)] : prenumeF[random.Next(prenumeF.Count)];
             tbNume.Text = nume[random.Next(nume.Count)];
+            tbCui.Text = new CUIGenerator().GeneratorCUI(tbCui.Text);
         }
 
         private void button1_Click(object sender, EventArgs e)
