@@ -53,5 +53,14 @@ namespace Converter
             }
             return data;
         }
+
+        public static string getAgeInTextFormat(DateTime dataPikerValue)
+        {
+            var age = DateTime.Now - dataPikerValue;
+            var year = age.Days / 365;
+            var month = (age.Days - (year * 365)) / 30;
+            var days = age.Days - (year * 365) - (month * 30);
+            return $"{year} ani, {month} luni, {days} zile";
+        }
     }
 }

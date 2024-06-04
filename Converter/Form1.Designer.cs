@@ -34,7 +34,7 @@
             label2 = new Label();
             tbDbFormat = new TextBox();
             tbUUID = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            datePickerDataNasterii = new DateTimePicker();
             cbSex = new ComboBox();
             label3 = new Label();
             label4 = new Label();
@@ -50,6 +50,9 @@
             btnCopySupId = new Button();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
+            btnCopyPrenume = new Button();
+            btnCopyCNP = new Button();
+            btnCopyNUme = new Button();
             Length = new Label();
             btnCopyCUI = new Button();
             cbCUILength = new ComboBox();
@@ -103,13 +106,14 @@
             tbUUID.Size = new Size(303, 23);
             tbUUID.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // datePickerDataNasterii
             // 
-            dateTimePicker1.Location = new Point(102, 22);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(105, 23);
-            dateTimePicker1.TabIndex = 4;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            datePickerDataNasterii.Location = new Point(102, 22);
+            datePickerDataNasterii.Name = "datePickerDataNasterii";
+            datePickerDataNasterii.Size = new Size(105, 23);
+            datePickerDataNasterii.TabIndex = 4;
+            datePickerDataNasterii.Value = new DateTime(2006, 6, 3, 13, 29, 9, 824);
+            datePickerDataNasterii.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // cbSex
             // 
@@ -140,7 +144,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(6, 182);
+            label5.Location = new Point(9, 182);
             label5.Name = "label5";
             label5.Size = new Size(34, 15);
             label5.TabIndex = 9;
@@ -149,7 +153,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(6, 207);
+            label6.Location = new Point(9, 206);
             label6.Name = "label6";
             label6.Size = new Size(43, 15);
             label6.TabIndex = 10;
@@ -158,7 +162,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(6, 232);
+            label7.Location = new Point(9, 232);
             label7.Name = "label7";
             label7.Size = new Size(55, 15);
             label7.TabIndex = 11;
@@ -166,7 +170,7 @@
             // 
             // tbCNP
             // 
-            tbCNP.Location = new Point(99, 178);
+            tbCNP.Location = new Point(98, 176);
             tbCNP.Name = "tbCNP";
             tbCNP.ReadOnly = true;
             tbCNP.Size = new Size(303, 23);
@@ -174,7 +178,7 @@
             // 
             // tbNume
             // 
-            tbNume.Location = new Point(99, 203);
+            tbNume.Location = new Point(98, 201);
             tbNume.Name = "tbNume";
             tbNume.ReadOnly = true;
             tbNume.Size = new Size(303, 23);
@@ -182,7 +186,7 @@
             // 
             // tbPrenume
             // 
-            tbPrenume.Location = new Point(99, 228);
+            tbPrenume.Location = new Point(98, 225);
             tbPrenume.Name = "tbPrenume";
             tbPrenume.ReadOnly = true;
             tbPrenume.Size = new Size(303, 23);
@@ -242,6 +246,11 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(btnCopyPrenume);
+            groupBox2.Controls.Add(tbCNP);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(btnCopyCNP);
+            groupBox2.Controls.Add(btnCopyNUme);
             groupBox2.Controls.Add(Length);
             groupBox2.Controls.Add(btnCopyCUI);
             groupBox2.Controls.Add(cbCUILength);
@@ -249,65 +258,93 @@
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(lblAgeValue);
             groupBox2.Controls.Add(label9);
-            groupBox2.Controls.Add(dateTimePicker1);
+            groupBox2.Controls.Add(datePickerDataNasterii);
             groupBox2.Controls.Add(cbSex);
             groupBox2.Controls.Add(cbJudet);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(btGenerate);
-            groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(tbPrenume);
             groupBox2.Controls.Add(label6);
             groupBox2.Controls.Add(tbNume);
             groupBox2.Controls.Add(label7);
-            groupBox2.Controls.Add(tbCNP);
             groupBox2.Location = new Point(25, 94);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(493, 266);
+            groupBox2.Size = new Size(490, 260);
             groupBox2.TabIndex = 19;
             groupBox2.TabStop = false;
             groupBox2.Text = "Random data";
             // 
+            // btnPrenumeCopy
+            // 
+            btnCopyPrenume.Location = new Point(406, 225);
+            btnCopyPrenume.Name = "btnPrenumeCopy";
+            btnCopyPrenume.Size = new Size(75, 23);
+            btnCopyPrenume.TabIndex = 26;
+            btnCopyPrenume.Text = "COPY";
+            btnCopyPrenume.UseVisualStyleBackColor = true;
+            btnCopyPrenume.Click += btnPrenumeCopy_Click;
+            // 
+            // btnCNPCopy
+            // 
+            btnCopyCNP.Location = new Point(406, 177);
+            btnCopyCNP.Name = "btnCNPCopy";
+            btnCopyCNP.Size = new Size(75, 23);
+            btnCopyCNP.TabIndex = 24;
+            btnCopyCNP.Text = "COPY";
+            btnCopyCNP.UseVisualStyleBackColor = true;
+            btnCopyCNP.Click += btnCNPCopy_Click;
+            // 
+            // btnNumeCopy
+            // 
+            btnCopyNUme.Location = new Point(406, 201);
+            btnCopyNUme.Name = "btnNumeCopy";
+            btnCopyNUme.Size = new Size(75, 23);
+            btnCopyNUme.TabIndex = 25;
+            btnCopyNUme.Text = "COPY";
+            btnCopyNUme.UseVisualStyleBackColor = true;
+            btnCopyNUme.Click += btnNumeCopy_Click;
+            // 
             // Length
             // 
             Length.AutoSize = true;
-            Length.Location = new Point(98, 153);
+            Length.Location = new Point(98, 151);
             Length.Name = "Length";
-            Length.Size = new Size(44, 15);
+            Length.Size = new Size(58, 15);
             Length.TabIndex = 23;
-            Length.Text = "Length";
+            Length.Text = "Length = ";
             // 
             // btnCopyCUI
             // 
-            btnCopyCUI.Location = new Point(277, 149);
+            btnCopyCUI.Location = new Point(406, 147);
             btnCopyCUI.Name = "btnCopyCUI";
             btnCopyCUI.Size = new Size(75, 23);
             btnCopyCUI.TabIndex = 22;
-            btnCopyCUI.Text = "COPY CUI";
+            btnCopyCUI.Text = "COPY";
             btnCopyCUI.UseVisualStyleBackColor = true;
             btnCopyCUI.Click += btnCopyCUI_Click;
             // 
             // cbCUILength
             // 
             cbCUILength.FormattingEnabled = true;
-            cbCUILength.Location = new Point(148, 149);
+            cbCUILength.Location = new Point(162, 147);
             cbCUILength.Name = "cbCUILength";
             cbCUILength.Size = new Size(41, 23);
             cbCUILength.TabIndex = 21;
             // 
             // tbCui
             // 
-            tbCui.Location = new Point(195, 149);
+            tbCui.Location = new Point(209, 147);
             tbCui.Name = "tbCui";
             tbCui.ReadOnly = true;
-            tbCui.Size = new Size(76, 23);
+            tbCui.Size = new Size(192, 23);
             tbCui.TabIndex = 20;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(8, 153);
+            label10.Location = new Point(9, 151);
             label10.Name = "label10";
             label10.Size = new Size(29, 15);
             label10.TabIndex = 19;
@@ -318,9 +355,9 @@
             lblAgeValue.AutoSize = true;
             lblAgeValue.Location = new Point(260, 26);
             lblAgeValue.Name = "lblAgeValue";
-            lblAgeValue.Size = new Size(12, 15);
+            lblAgeValue.Size = new Size(105, 15);
             lblAgeValue.TabIndex = 18;
-            lblAgeValue.Text = "-";
+            lblAgeValue.Text = "18 ani, 0 luni, 6 zile";
             // 
             // label9
             // 
@@ -335,7 +372,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(535, 380);
+            ClientSize = new Size(537, 377);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -356,7 +393,7 @@
         private Label label2;
         private TextBox tbDbFormat;
         private TextBox tbUUID;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker datePickerDataNasterii;
         private ComboBox cbSex;
         private Label label3;
         private Label label4;
@@ -379,5 +416,10 @@
         private ComboBox cbCUILength;
         private Button btnCopyCUI;
         private Label Length;
+        private GroupBox groupBox3;
+        private Button btnCopyCNP;
+        private Button button2;
+        private Button btnCopyNUme;
+        private Button btnCopyPrenume;
     }
 }

@@ -27,7 +27,7 @@
             {
                 sum += int.Parse(cui[index].ToString()) * int.Parse(control[index].ToString());
             }
-            sum *=10;
+            sum *= 10;
             var cComponent = (sum % 11).ToString();
             if (cComponent == "10")
                 return "0";
